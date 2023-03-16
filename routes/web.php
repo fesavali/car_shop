@@ -22,3 +22,4 @@ Route::get('/LoginPage', 'App\Http\Controllers\buyerController@index')->name('lo
 Route::get('/ListedCars', 'App\Http\Controllers\carController@index')->name('all_cars');
 Route::get('/Contact Us', 'App\Http\Controllers\contactController@index')->name('contact');
 Route::post('/Listed/Results', 'App\Http\Controllers\carController@search')->name('search');
+Route::post('/Contact Us', 'App\Http\Controllers\contactController@store')->name('store');

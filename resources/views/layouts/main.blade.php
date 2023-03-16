@@ -131,9 +131,9 @@ aria-label="Toggle navigation"
 <!-- footer -->
 <footer class="bg-light text-center text-lg-start">
   <!-- Copyright -->
-  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+  <div class="text-center p-3" style="background-color: #151E27;">
     © 2023 Copyright:
-    <a class="text-dark" href="{{ route('home')}}">Car Sell Site</a>
+    <a style="color: #fff" href="{{ route('home')}}">Car Sell Site</a>
   </div>
   <!-- Copyright -->
 </footer>
