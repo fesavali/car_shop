@@ -1,63 +1,25 @@
 @extends('layouts.main')
 @section('content')
-
-
-<div class="row" style="padding-bottom:10px;" >
-<div class="col-12" style="background-color: rgba(0,0,0, 0.2); padding-top:30px;padding-bottom:10px; border-radius:8px;">
-<header>
-  <!-- Intro settings -->
-  <style>
-    /* Default height for small devices */
-    #intro-example {
-      height: 200px;
-    }
-
-    /* Height for devices larger than 992px */
-    @media (min-width: 992px) {
-      #intro-example {
-        height: 350px;
-      }
-    }
-  </style>
-  <!-- Background image -->
-  <div
-    id="intro-example"
-    class="p-5 text-center bg-image"
-    style="background-image: url('public/images/slides/automobile-gc509f9904_1920.jpg');"
-  >
-    <div class="mask" style="background-color: rgba(0, 0, 0, 0.7);">
-      <div class="d-flex justify-content-center align-items-center h-100">
-        <div class="text-white">
-          <h1 class="mb-3">Get the best deals in The World.</h1>
-          <h5 class="mb-4">Buy your dream car with us today.</h5>
-          <a
-            class="btn btn-outline-light btn-lg m-2"
-            href="{{ route('all_cars')}}"
-            role="button"
-            rel="nofollow"
-            target="_blank"
-          >See Listed Cars</a
-          >
-          <a
-            class="btn btn-outline-light btn-lg m-2"
-            href="{{ route('sellcar')}}"
-            target="_blank"
-            role="button"
-          >List Your Car</a
-          >
-        </div>
+  <!-- show success message -->
+  @if (session('successMsg'))
+      <div class="alert alert-success" role="alert">
+          {{ session('successMsg') }}
       </div>
-    </div>
-  </div>
-  <!-- Background image -->
-</header>
-</div>
-<h2 style="font-family:Garamond;">Search our Database</h2>
-<!-- search box -->
-<div class="row" >
-  <div class="col-6 col-sm-2" style="background-color: rgba(0,0,0, 0.2); padding-top:10px; padding-bottom:10px; border-radius: 8px;">
-  <form action="{{ route('search') }}" method="POST">
-  {{ csrf_field() }}
+        @endif
+<!-- show error messages -->
+  @if ($errors->any())
+      @foreach($errors->all() as $error)
+        <div class="alert alert-danger" role="alert">
+          {{ $error }}
+        </div>
+         @endforeach
+  @endif
+  <div class="col-6 col-md-4"  style="background-color: rgba(0,0,0, 0.2); padding-top:10px;">
+<!-- Pills content -->
+<div class="tab-content">
+<div class="tab-pane fade show active" id="pills-login" role="tabpanel" aria-labelledby="tab-login">
+<span class="badge bg-info" style="width: 100%; padding-top:10px;padding-bottom:10px; background-color: #151E27 !Important;">SEARCH VEHICLES</span>
+<form action="{{ route('search') }}" method="POST">
     <!-- show success message -->
     @if (session('successMsg'))
       <div class="alert alert-success" role="alert">
@@ -72,8 +34,9 @@
         </div>
          @endforeach
   @endif
-
-<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+{{ csrf_field() }}
+  <div class="col-md-12" style="padding-bottom:5px; padding-top:5px;">
+  <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/3.5.2/select2.min.css" />
 <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/3.5.2/select2.min.js"></script>
@@ -94,7 +57,7 @@
   });
 })
 </script>
-<select class="" name="make" id="make" aria-hidden="true" style="background-color: rgba(0,0,0, 0.6) !important; color: #fff; border-radius:8px;padding-top:10px;padding-bottom:10px; width: 200px !important;" required>
+<select class="" name="make" id="make" aria-hidden="true" style="background-color: rgba(0,0,0, 0.6) !important; color: #fff; border-radius:8px;padding-top:10px;padding-bottom:10px; width: 400px !important;" required>
       <option value="01" data-rel="other" selected="selected">Select Make</option>
       <option value="Toyota" data-rel="toyota">TOYOTA</option>
       <option value="Nissan" data-rel="nissan">NISSAN</option>
@@ -120,8 +83,7 @@
       <option value="Renault" data-rel="rena">RENAULT</option>
     </select>
 </div>
-  <div class="col-6 col-sm-2" style="background-color: rgba(0,0,0, 0.2); padding-top:10px; padding-bottom:10px; border-radius: 8px;">
-  <select name="model" id="model" aria-hidden="true" style="background-color: rgba(0,0,0, 0.6); color: #fff; border-radius:8px;padding-top:10px;padding-bottom:10px; width: 200px !important;" required>
+<select name="model" id="model" aria-hidden="true" style="background-color: rgba(0,0,0, 0.6); color: #fff; border-radius:8px;padding-top:10px;padding-bottom:10px; width: 400px !important;" required>
       <option disabled="disabled" selected="selected" id="other">Choose Model</option>
       	<option value="110" id="toyota">110</option>
       	<option value="4Runner" id="toyota">4Runner</option>
@@ -202,7 +164,7 @@
 		<option value="NV200" id="nissan">NV200/Vanette</option>	
 		<option value="Patrol" id="nissan">Patrol/Safari</option>	
 		<option value="Serena" id="nissan">Serena</option>	
-		<option value="Skyline" id="nissan">Skyline/Skyline Crossover</option>
+		<option value="Skyline" id="nissan">Skyline/Skyline Crossover</option>	
 		<option value="sylphy" id="nissan">Sylphy</option>
 		<option value="Teana" id="nissan">Teana</option>	
 		<option value="Tiida" id="nissan">Tiida</option>	
@@ -455,11 +417,12 @@
 		<option value="Kiger" id="rena">Kiger</option>
 		<option value="Triber" id="rena">Triber</option>
     </select>
-</div>
-  <div class="col-6 col-sm-2" style="background-color: rgba(0,0,0, 0.2); padding-top:10px; padding-bottom:10px; border-radius: 8px;">
+<div class="row">
+  <div class="col-6">
+  <label>Year of Manufacture From:</label>
 <select class="" name="from_year" aria-hidden="true" 
 style="width: 100%; background-color: rgba(0,0,0, 0.6); color: #fff; border-radius:8px;padding-top:10px;padding-bottom:10px;">
-<option data-select2-id="7" selected>YOM from Year</option>
+<option data-select2-id="7" selected>From Year</option>
 <option value="2006">2000</option>
 <option value="2006">2001</option>
 <option value="2006">2002</option>
@@ -482,12 +445,14 @@ style="width: 100%; background-color: rgba(0,0,0, 0.6); color: #fff; border-radi
 <option value="2019">2019</option>
 <option value="2020">2020</option>
 <option value="2020">2021</option>
-</select>
-</div>
-  <div class="col-6 col-sm-2" style="background-color: rgba(0,0,0, 0.2); padding-top:10px; padding-bottom:10px; border-radius: 8px;">
-  <select class="" name="from_year" aria-hidden="true" 
+</select><span class="select2-selection select2-selection--single" 
+role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false" aria-labelledby="select2-from_year-87-container"><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+  </div>
+  <div class="col-6">
+  <label>Year of Manufacture To:</label>
+<select class="" name="to_year" data-select2-id="8" tabindex="-1" aria-hidden="true" 
 style="width: 100%; background-color: rgba(0,0,0, 0.6); color: #fff; border-radius:8px;padding-top:10px;padding-bottom:10px;">
-<option data-select2-id="7" selected>YOM to Year</option>
+<option data-select2-id="10" selected="selected" >To Year</option>
 <option value="2006">2000</option>
 <option value="2006">2001</option>
 <option value="2006">2002</option>
@@ -511,12 +476,32 @@ style="width: 100%; background-color: rgba(0,0,0, 0.6); color: #fff; border-radi
 <option value="2020">2020</option>
 <option value="2020">2021</option>
 </select>
+  </div>
 </div>
-  <div class="col-6 col-sm-2" style="background-color: rgba(0,0,0, 0.2); padding-top:10px; padding-bottom:10px; border-radius: 8px;">
-  <select class="" name="max_mileage" data-select2-id="14" tabindex="-1" aria-hidden="true" 
+<div class="row">
+  <div class="col-6">
+  <label>Min Mileage</label>
+<select class="" name="min_mileage" data-select2-id="11" tabindex="-1" aria-hidden="true"
+style="width: 100%; background-color: rgba(0,0,0, 0.6); color: #fff; border-radius:8px;padding-top:10px;padding-bottom:10px;">
+<option disabled="disabled">Mileage (km)</option>
+<option value="0" selected="selected" data-select2-id="13">0</option>
+<option value="10000">10,000</option>
+<option value="30000">30,000</option>
+<option value="50000">50,000</option>
+<option value="100000">100,000</option>
+<option value="150000">150,000</option>
+<option value="250000">250,000</option>
+<option value="350000">350,000</option>
+<option value="450000">450,000</option>
+<option value="500000">500,000</option>
+</select>
+  </div>
+  <div class="col-6">
+  <label>Max Mileage</label>
+ <select class="" name="max_mileage" data-select2-id="14" tabindex="-1" aria-hidden="true" 
  style="width: 100%; background-color: rgba(0,0,0, 0.6); color: #fff; border-radius:8px;padding-top:10px;padding-bottom:10px;">
-<option disabled="disabled">Max Mileage (km)</option>
-<option value="0" selected="selected" data-select2-id="16">Min Mileage</option>
+<option disabled="disabled">Mileage (km)</option>
+<option value="0" selected="selected" data-select2-id="16">0</option>
 <option value="10000">10,000</option>
 <option value="30000">30,000</option>
 <option value="50000">50,000</option>
@@ -526,53 +511,260 @@ style="width: 100%; background-color: rgba(0,0,0, 0.6); color: #fff; border-radi
 <option value="350,000">350,000</option>
 <option value="450,000">450,000</option>
 </select>
+  </div>
 </div>
-  <div class="col-6 col-sm-2" style="background-color: rgba(0,0,0, 0.2); padding-top:10px; padding-bottom:30px; border-radius: 8px;">
+<div class="row">
+  <div class="col-6">
+    <label>Min Engine CC</label>
+<input class="form-control" type="number" name="min_engine" placeholder="Min Engine (cc)"></div>
+  <div class="col-6">
+  <label>Max Engine CC</label>
+<input class="form-control" type="number" name="max_engine" placeholder="Max Engine (cc)">
+  </div>
+</div>
+<div class="row" style="padding-bottom: 10px;">
+  <div class="col-6">
+    <label>Min Price</label>
+<input class="form-control" type="number" name="min_price" placeholder="Min Price"></div>
+  <div class="col-6">
+<label>Max Price</label>
+<input class="form-control" type="number" name="max_price" placeholder="Max Price"></div>
+</div>
 <!-- Submit button -->
 <button type="submit" class="btn btn-primary btn-block mb-4" 
 style="background-color : rgba(0, 101, 68, 0.9) !Important;"><i class="fa fa-search" aria-hidden=""></i>&nbsp;SEARCH</button>
 </form>
 </div>
 </div>
-<h2 style="font-family:Garamond;">Featured Vehicles</h2>
-<div class="row" style="padding-left: 20px; padding-top: 10px; padding-bottom: 0px; color: #fff; background-color: rgba(0,0,0, 0.2) !Important; border-radius: 8px;">
+<!-- Pills content -->
+</div>
+<div class="col-md-8" style="padding-left : 20px; padding-right : 20px;">
+   <h5>Car ID: <b>{{$vehicle->carId}}</b></h5>
+   <h5>Plate: <b>{{ strtoupper($vehicle->vin); }}</b></h5>
+<!-- Carousel wrapper -->
+<div id="carouselBasicExample" class="carousel slide carousel-fade" data-mdb-ride="carousel">
+<!-- Indicators -->
+<div class="carousel-indicators">
+<button
+type="button"
+data-mdb-target="#carouselBasicExample"
+data-mdb-slide-to="0"
+class="active"
+aria-current="true"
+aria-label="Slide 1"
+></button>
+<button
+type="button"
+data-mdb-target="#carouselBasicExample"
+data-mdb-slide-to="1"
+aria-label="Slide 2"
+></button>
+<button
+type="button"
+data-mdb-target="#carouselBasicExample"
+data-mdb-slide-to="2"
+aria-label="Slide 3"
+></button>
+<button
+type="button"
+data-mdb-target="#carouselBasicExample"
+data-mdb-slide-to="3"
+aria-label="Slide 4"
+></button>
+<button
+type="button"
+data-mdb-target="#carouselBasicExample"
+data-mdb-slide-to="4"
+aria-label="Slide 5"
+></button>
+<button
+type="button"
+data-mdb-target="#carouselBasicExample"
+data-mdb-slide-to="5"
+aria-label="Slide 6"
+></button>
+</div>
 
-  <div class="col-md-12">
-  <div class="row">
-  <div class="col-6 col-md-4" style="padding-bottom: 15px;">  
+
+<!-- Inner -->
+<div class="carousel-inner">
+@php
+$price = number_format("$vehicle->price",2);
+$make = strtoupper($vehicle->make);
+$model = strtoupper($vehicle->model);
+$phone = $vehicle->phone;
+$place = $vehicle->county;
+@endphp
+<!-- Single item -->
+<div class="carousel-item active">
+<img src="{{ url('public/images/' . json_decode($vehicle->images, true)[0]) }}" class="d-block w-100" alt="Sunset Over the City"
+style="height:370px;"/>
+<div class="carousel-caption d-none d-md-block">
+<h5>Car Images </h5>
+<p><b>make / model  <i class="fas fa-phone fa-1x"></i>&nbsp;phone
+    <i class="fas fa-map-marker-alt fa-1x"></i>&nbsp;place</b></p>
+</div>
+</div>
+
+<!-- Single item -->
+<div class="carousel-item">
+<img src="{{ url('public/images/' . json_decode($vehicle->images, true)[1]) }}" class="d-block w-100" alt="Canyon at Nigh" 
+style="height:370px;"/>
+<div class="carousel-caption d-none d-md-block">
+<h5>Car Images </h5>
+<p><b>make / model  <i class="fas fa-phone fa-1x"></i>&nbsp;phone
+    <i class="fas fa-map-marker-alt fa-1x"></i>&nbsp;place</b></p>
+</div>
+</div>
+
+<!-- Single item -->
+<div class="carousel-item">
+<img src="{{ url('public/images/' . json_decode($vehicle->images, true)[2]) }}" class="d-block w-100" alt="Cliff Above a Stormy Sea"
+style="height:370px;"/>
+<div class="carousel-caption d-none d-md-block">
+<h5>Car Images </h5>
+<p><b>make / model  <i class="fas fa-phone fa-1x"></i>&nbsp;phone
+    <i class="fas fa-map-marker-alt fa-1x"></i>&nbsp;place</b></p>
+</div>
+</div>
+
+<!-- Single item -->
+<div class="carousel-item">
+<img src="{{ url('public/images/' . json_decode($vehicle->images, true)[3]) }}" class="d-block w-100" alt="Cliff Above a Stormy Sea"
+style="height:370px;"/>
+<div class="carousel-caption d-none d-md-block">
+<h5>Car Images </h5>
+<p><b>make / model  <i class="fas fa-phone fa-1x"></i>&nbsp;phone
+    <i class="fas fa-map-marker-alt fa-1x"></i>&nbsp;place</b></p>
+</div>
+</div>
+
+<!-- Single item -->
+<div class="carousel-item">
+<img src="{{ url('public/images/' . json_decode($vehicle->images, true)[4]) }}" class="d-block w-100" alt="Cliff Above a Stormy Sea"
+style="height:370px;"/>
+<div class="carousel-caption d-none d-md-block">
+<h5>Car Images </h5>
+<p><b>make / model  <i class="fas fa-phone fa-1x"></i>&nbsp;phone
+    <i class="fas fa-map-marker-alt fa-1x"></i>&nbsp;place</b></p>
+</div>
+</div>
+
+<!-- Single item -->
+<div class="carousel-item">
+<img src="{{ url('public/images/' . json_decode($vehicle->images, true)[5]) }}" class="d-block w-100" alt="Cliff Above a Stormy Sea"
+style="height:370px;"/>
+<div class="carousel-caption d-none d-md-block">
+<h5>Car Images </h5>
+<p><b>make / model  <i class="fas fa-phone fa-1x"></i>&nbsp;phone
+    <i class="fas fa-map-marker-alt fa-1x"></i>&nbsp;place</b></p>
+</div>
+</div>
+</div>
+<!-- Inner -->
+
+<!-- Controls -->
+<button class="carousel-control-prev" type="button" data-mdb-target="#carouselBasicExample" data-mdb-slide="prev">
+<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+<span class="visually-hidden">Previous</span>
+</button>
+<button class="carousel-control-next" type="button" data-mdb-target="#carouselBasicExample" data-mdb-slide="next">
+<span class="carousel-control-next-icon" aria-hidden="true"></span>
+<span class="visually-hidden">Next</span>
+</button>
+</div>
+<!-- Carousel wrapper --> 
+</div>
+</div>
+<div class="row" style="padding-left: 20px; padding-top: 10px; padding-bottom: 20px; color: #fff;">
+<div class="col-6 col-md-4" style="background-color : rgba(0,0,0, 0.3) !Important;">
+#
+</div>
+  <div class="col-md-8">
+<div class="row" style="color:#000; padding-bottom:10px;">
+  <div class="col-6 col-sm-3">
+    <div class="card">
+  <div class="card-body">
+      <h5>Price:</h5>
+     <h5><b>Ksh.{{ number_format("$vehicle->price"); }}</b></h5> 
+  </div>
+</div>
+  </div>
+  <div class="col-6 col-sm-3">
   <div class="card">
-  <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/184.webp" class="card-img-top" alt="Fissure in Sandstone"/>
-  <div class="card-body" style="color: #000;">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#!" class="btn btn-primary">Button</a>
+  <div class="card-body">
+  <h5>Mileage:</h5>
+     <h5><b>{{ number_format("$vehicle->miles"); }} Kms</b></h5> 
   </div>
 </div>
-</div>
-
-<div class="col-6 col-md-4" style="padding-bottom: 15px;">
-<div class="card">
-  <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/184.webp" class="card-img-top" alt="Fissure in Sandstone"/>
-  <div class="card-body" style="color: #000;">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#!" class="btn btn-primary">Button</a>
+  </div>
+  <div class="col-6 col-sm-3">
+  <div class="card">
+  <div class="card-body">
+      <h5><b><i class="fas fa-map-marker-alt fa-1x"></i>&nbsp;{{ $vehicle->country }}</b></h5>
+      <h5><b><i class="fas fa-map-marker-alt fa-1x"></i>&nbsp;{{ $vehicle->county }}</b></h5>
   </div>
 </div>
-</div>
-<div class="col-6 col-md-4" style="padding-bottom: 15px;">
-<div class="card">
-  <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/184.webp" class="card-img-top" alt="Fissure in Sandstone"/>
-  <div class="card-body" style="color: #000;">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#!" class="btn btn-primary">Button</a>
+  </div>
+  <div class="col-6 col-sm-3">
+  <div class="card">
+  <div class="card-body">
+  <h6><b><i class="fas fa-phone fa-1x"></i>{{ $vehicle->phone }}</b></h6>
+<h6><b>{{ $vehicle->email }}</b></h6>
   </div>
 </div>
+  </div>
 </div>
-
+<div class="container-fluid" style="background-color : rgba(0, 0, 0, 0.7) !Important; border-radius:5px;">
+<h5 style="font-family:Garamond;">{{ strtoupper($vehicle->title); }}</h5>
 </div>
+<div class="container-fluid" style="background-color : rgba(0, 0, 0, 0.7) !Important; border-radius:5px; padding-bottom:5px;">
+<h4 style="font-family:Garamond;"><b>Vehicle Details</b></h4>
+<table class="table" style="color:#fff;">
+<tbody>
+<tr>
+      <td>
+       Make/Model:&nbsp;<b>{{ strtoupper($vehicle->make); }}/{{ strtoupper($vehicle->model); }}</b>
+      </td>
+      <td>
+      Year of Manufacture:&nbsp;<b>{{ $vehicle->year }}</b>
+      </td>
+      <td>
+      Transmission:&nbsp;<b>{{ strtoupper($vehicle->transmission); }}</b>
+      </td>
+    </tr>
+    <tr>
+      <td>
+       Fuel:&nbsp;<b>{{ strtoupper($vehicle->fuel_type); }}</b>
+      </td>
+      <td>
+      Color:&nbsp;<b>{{ strtoupper($vehicle->exterior); }}</b>
+      </td>
+      <td>
+      Vehicle Type:&nbsp;<b>{{ strtoupper($vehicle->vehicle_type); }}</b>
+      </td>
+    </tr>
+    <tr>
+    <td>
+      Vehicle Regiatration No.&nbsp;:&nbsp;<b>{{ strtoupper($vehicle->vin); }}</b>
+      </td>  
+    </tr>
+  </tbody>
+</table>
 </div>
+&nbsp;
+<div class="container-fluid" style="background-color : rgba(0, 0, 0, 0.7) !Important; border-radius:5px; padding-bottom:5px;">
+<h4 style="font-family:Garamond;"><b>Vehicle Feartures</b></h4>
+ @foreach (json_decode($vehicle->features, true) as $feature)
+ <i class='fa fa-check' style='color: #fed925;'></i> |&nbsp;{{ $feature }}&nbsp;|&nbsp;&nbsp;
+@endforeach
+<table class="table" style="color:#fff;"><tbody><tr><td></td></tr></tbody></table>
+</div>
+&nbsp;
+<div class="container-fluid" style="background-color : rgba(0, 0, 0, 0.7) !Important; border-radius:5px; padding-bottom:5px;">
+<h4 style="font-family:Garamond;"><b>Description</b></h4>
+ {{ $vehicle->description }}
+<table class="table" style="color:#fff;"><tbody><tr><td></td></tr></tbody></table>
 </div>
 </div>
 @endsection
