@@ -4,11 +4,6 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="csrf-token" content="{{ csrf_token() }}">
-<meta name="description" content="Automartea is a useful, and growing, collection of imported, used cars 
-and other vehicles including toyota, mazda, ford, nissan, honda. Browse, compare, and buy vehicles for sale. Driver recruitment, 
-sparepart sales and used motorbikes">
-<meta name="keywords" content="car, used cars, vehicle, dealer, parts, used motorbikes, car auctions/bid, sell car, buy car, driver recruitment, best garage">
-<meta name="author" content="Automart East Africa">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Car | Sell</title>
@@ -18,12 +13,14 @@ sparepart sales and used motorbikes">
 <meta name="theme-color" content="#1F4255">
 
 <!-- jquery -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7159696681879456"
+     crossorigin="anonymous"></script>
 
 <!-- Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 
+<!-- Styles -->
 <!-- Font Awesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
 rel="stylesheet"
@@ -56,8 +53,6 @@ src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.2/mdb.min.js">
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script src="https://code.iconify.design/2/2.1.2/iconify.min.js"></script>
-  <!-- <script src="{{ url('resources/js/app.js') }}"></script> -->
-
 </head>
 
 <body class="antialiased">
@@ -65,76 +60,109 @@ src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.2/mdb.min.js">
 <div class="container-xxl" style="background-color : rgba(0,0,0, 0.3) !Important; width: 98% !Important;  padding-bottom : 10px !Important;">
 
 <div class="row" style="color: #fff; padding-bottom: 15px;">
-<div class="col-md-8"> 
-<img src="{{ url('/images/logo.png') }}" alt="Car Sell Logo" height="60px"/>
-  <!-- <h1>AUTOMART | EA</h1> -->
+<div class="col-md-8">  
+<img src="{{ url('public/images/logo.png') }}" alt="Automart EA Logo" height="60px">
+
 <h6>BEST DEALS IN THE WORLD</h6></div>
-<div class="col-md-4 d-flex justify-content-end" style="padding-top: 25px; padding-left: 20px; "><h5 style="font-family:Garamond;"><b><a href="https://wa.me/qr/CXYMBING6ENYD1" target="_blank"><i class="far fa-comment me-3"></i> WhatsApp</a> or <i class="far fa fa-phone me-3"></i>+254 792 567 464</b></h5></div>
+  <div class="col-md-4 d-flex justify-content-end" style="padding-top: 25px; padding-left: 20px; "><h5 style="font-family:Garamond;"><b><a href="https://wa.me/qr/CXYMBING6ENYD1" target="_blank"><i class="far fa-comment me-3"></i> WhatsApp</a> or <i class="far fa fa-phone me-3"></i>+254 792 567 464</b></h5></div>
+
 </div>
 
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light " style="background-color: #151E27;">
-<!-- Container wrapper -->
-<div class="container-fluid">
-<!-- Toggle button -->
-<button
-class="navbar-toggler"
-type="button"
-data-mdb-toggle="collapse"
-data-mdb-target="#navbarSupportedContent"
-aria-controls="navbarSupportedContent"
-aria-expanded="false"
-aria-label="Toggle navigation"
->
-<i class="fas fa-bars"></i>
-</button>
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #151E27; border-radius:10px;">
+  <!-- Container wrapper -->
+  <div class="container-fluid">
+    <!-- Toggle button -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-mdb-toggle="collapse"
+      data-mdb-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <i class="fas fa-bars"></i>
+    </button> 
 
-<!-- Collapsible wrapper -->
-<div class="collapse navbar-collapse" id="navbarSupportedContent">
-<!-- Navbar brand -->
-<a class="navbar-brand mt-2 mt-lg-0" href="{{ route('home')}}">
-<h3 style="font-family:Garamond; color:white;">CaR | SelL</h3>
-</a>
-<!-- Left links -->
-<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-<li class="nav-item">
-<a class="nav-link" href="{{ route('all_cars')}}" style="font-family:Garamond; color:white;"><b>Listed Cars</b></a>
-</li>
-<li class="nav-item">
-<a class="nav-link" href="{{ route('sellcar')}}" style="font-family:Garamond; color:white;"><b>List Your Car</b></a>
-</li>
-<li class="nav-item">
-<a class="nav-link" href="{{ route('dealerHome')}}" style="font-family:Garamond; color:white;"><b>Car Dealers</b></a>
-</li>
-<li class="nav-item">
-<a class="nav-link" href="{{ route('login')}}" style="font-family:Garamond; color:white;"><b>Login</b></a>
-</li>
-<li class="nav-item">
-<a class="nav-link" href="{{ route('contact')}}" style="font-family:Garamond; color:white;"><b>Contact Us</b></a>
-</li>
-</ul>
-<!-- Left links -->
-</div>
-<!-- Collapsible wrapper -->
-</div>
-<!-- Container wrapper -->
+    <!-- Collapsible wrapper -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <!-- Navbar brand -->
+      <a class="navbar-brand mt-2 mt-lg-0" href="{{ route('adash', $admin->id) }}">
+        <h3 style="font-family:Garamond; color:white;">CaRSelL | Admin</h3>
+        </a>
+      <!-- Left links -->
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <li class="nav-item">
+          <a class="nav-link" style="font-family:Garamond; color:white;" href="{{ route('adash', $admin->id) }}">Dashboard</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" style="font-family:Garamond; color:white;" href="{{ route('listed', $admin->id) }}">Listed Cars</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" style="font-family:Garamond; color:white;" href="{{ route('packages', $admin->id) }}">Packages</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" style="font-family:Garamond; color:white;" href="{{ route('admins1', $admin->id) }}">Users</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" style="font-family:Garamond; color:white;" href="#4">Adverts</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" style="font-family:Garamond; color:white;" href="{{ route('messages', $admin->id) }}">Messeges</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" style="font-family:Garamond; color:white;" href="{{ route('admin_bids', $admin->id) }}">Bid Posts</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" style="font-family:Garamond; color:white;" href="{{ route('admin_bid_cost', $admin->id) }}">Bid Cost</a>
+        </li>
+      </ul>
+      <!-- Left links -->
+    </div>
+    <!-- Collapsible wrapper -->
+
+    <!-- Right elements -->
+    <div class="d-flex align-items-center" style="padding-right:30px;">
+      <!-- Icon -->
+
+      <!-- Notifications -->
+     
+      <!-- Avatar -->
+      <div class="dropdown">
+        <a
+          class="dropdown-toggle d-flex align-items-center hidden-arrow"
+          href="#"
+          id="navbarDropdownMenuAvatar"
+          role="button"
+          data-mdb-toggle="dropdown"
+          aria-expanded="false">
+          {{ $admin->uName }}&nbsp;&nbsp;<i class="fas fa-angle-down"></i>
+        </a>
+        <ul
+          class="dropdown-menu dropdown-menu-end"
+          aria-labelledby="navbarDropdownMenuAvatar"
+        >
+          <li>
+            <a class="dropdown-item" href="#">My profile</a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="#">Settings</a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="{{ route('logout')}}">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- Right elements -->
+  </div>
+  <!-- Container wrapper -->
 </nav>
 <!-- Navbar -->
-<div class="row" style="padding-left: 20px;padding-right: 0px; padding-top: 10px; padding-bottom: 10px; color: #fff; ">
+<div class="row" style="padding-left: 20px;padding-right: 20px; padding-top: 10px; padding-bottom: 0px; color: #fff; ">
 @yield('content')
 </div>
-
-<!-- footer -->
-<footer class="bg-light text-center text-lg-start">
-  <!-- Copyright -->
-  <div class="text-center p-3" style="background-color: #151E27;">
-    © 2023 Copyright:
-    <a style="color: #fff" href="{{ route('home')}}">Car Sell Site</a>
-  </div>
-  <!-- Copyright -->
-</footer>
-<!-- footer -->
-
 </div>
 </body>
 </html>
