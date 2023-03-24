@@ -13,9 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('home');
+Route::get('/', 'App\Http\Controllers\Controller@index')->name('home');
 
 Route::get('/ListYourCar', 'App\Http\Controllers\sellController@index')->name('sellcar');
 Route::get('/LoginPage', 'App\Http\Controllers\buyerController@index')->name('login');
@@ -23,7 +21,10 @@ Route::get('/ListedCars', 'App\Http\Controllers\carController@index')->name('all
 Route::get('/Contact Us', 'App\Http\Controllers\contactController@index')->name('contact');
 Route::post('/Listed/Results', 'App\Http\Controllers\carController@search')->name('search');
 Route::post('/Contact Us', 'App\Http\Controllers\contactController@store')->name('store');
+Route::get('/DealersPage', 'App\Http\Controllers\dealerController@index')->name('dealerHome');
 Route::post('/Dashboard/carselluser', 'App\Http\Controllers\buyerController@login')->name('userlogin');
+Route::post('/ListYourCar', 'App\Http\Controllers\sellController@store')->name('savecar');
+Route::post('/DealersPage', 'App\Http\Controllers\dealerController@store')->name('dealerreg');
 
 //dealers
 Route::get('/Dealer/Panel/DealerDash{id}', 'App\Http\Controllers\dealerController@dash')->name('ddash');
