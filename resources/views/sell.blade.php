@@ -21,36 +21,11 @@
          @endforeach
   @endif
 
-<div class="col-6 col-md-4"  style="background-color: rgba(0,0,0, 0.2); padding-top:10px;">
-<!-- Pills content -->
-<div class="tab-content">
-<div class="tab-pane fade show active" id="pills-login" role="tabpanel" aria-labelledby="tab-login">
-
-</div>
-</div>
-<!-- <div class="row" style="padding-left: 20px; padding-top: 10px; padding-bottom: 20px; color: #fff;">
-<div class="col-6 col-md-4" style="background-color : rgba(0,0,0, 0.3) !Important;"> -->
-<span class="badge bg-info" style="width: 100%; padding-top:10px;
-padding-bottom:10px; background-color: #151E27 !Important;">DEAL OF THE WEEK</span>
-<!-- Deal of the week start -->
-<div class="card">
-  <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-    <img src="{{ url('public/images/deal/bmw-ge2aaa8af7_1920.jpg') }}" class="img-fluid"/>
-    <a href="#">
-      <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-    </a>
-  </div>
-  <div class="card-body" style="color: #000">
-    <h5 class="card-title">Advertise Here!</h5>
-    <p class="card-text">Contact us for more information</p>
-    <a href="#" class="btn btn-primary">More Details</a>
-  </div>
-<!-- </div>
-Deal of the week end -->
-</div>
-
+<div class="col-6 col-md-2"  style="background-color: rgba(0,0,0, 0.2); padding-top:10px;">
 <!-- Pills content --> 
 </div>
+
+
 <div class="col-md-8" style="padding-left : 20px; padding-right : 20px;">
   <!-- show success message -->
   @if (session('successMsg'))
@@ -758,10 +733,14 @@ Deal of the week end -->
     <input class="form-control" type="email" id="email" tabindex="24" name="email" placeholder="Enter your e-mail address " required>
   </div>
   <div class="col-6">
-    <input class="form-control" type="number" id="phone" tabindex="25" name="phone" placeholder="Mpesa number" required>
+    <input class="form-control" type="number" id="phone" tabindex="25" name="phone" placeholder="Phone number" required>
   </div>
 </div>
 <button type="submit" class="btn btn-primary btn-block mb-4">Submit &amp; pay for your listing</button>
 </form>
+</div>
+
+<div class="col-6 col-md-2"  style="background-color: rgba(0,0,0, 0.2); padding-top:10px;">
+<!-- Pills content --> 
 </div>
 @endsection 

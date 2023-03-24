@@ -539,38 +539,45 @@ style="background-color : rgba(0, 101, 68, 0.9) !Important;"><i class="fa fa-sea
 
   <div class="col-md-12">
   <div class="row">
-  <div class="col-6 col-md-4" style="padding-bottom: 15px;">  
-  <div class="card">
-  <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/184.webp" class="card-img-top" alt="Fissure in Sandstone"/>
-  <div class="card-body" style="color: #000;">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#!" class="btn btn-primary">Button</a>
-  </div>
-</div>
-</div>
-
+  @if(!empty($vehicles) && $vehicles->count())
+  @foreach($vehicles->all() as $vehicle)
+    <!-- image card 1 line 1 start -->
+    <!-- use this for slideshow -->
+    <!-- @foreach (json_decode($vehicle->images, true) as $image) -->
+    <!-- <a href="{{ url('public/images/' . json_decode($vehicle->images, true)[2]) }}" class="portfolio-box">
+        <img src="{{ url('public/images/' . json_decode($vehicle->images, true)[2]) }}" class="img-responsive" alt="--">
+    </a> -->
+<!-- @endforeach -->
 <div class="col-6 col-md-4" style="padding-bottom: 15px;">
-<div class="card">
-  <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/184.webp" class="card-img-top" alt="Fissure in Sandstone"/>
-  <div class="card-body" style="color: #000;">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#!" class="btn btn-primary">Button</a>
+  <div class="card" style="color: #000">
+  <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+    <img src="{{ url('public/images/' . json_decode($vehicle->images, true)[1]) }}" class="img-fluid" style="height:200px !Important; width:395px !Important;"/>
+    <a href="{{ route('details', $vehicle->id) }}">
+      <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+    </a>
+  </div>
+  <div class="card-body">
+    <h6 class="card-title">Year of Manufacture: <b>{{ $vehicle->year }}</b></h6>
+    <h6 class="card-title">Price: <b>Ksh. {{ number_format("$vehicle->price",2) }}</b></h6>
+    <h6 class="card-title">Make&Model: <b>{{ ucwords($vehicle->make); }} / {{ ucwords($vehicle->model); }}</b></h6>
+    <h6 class="card-title">Mileage: <b>{{ number_format("$vehicle->miles",1); }} Kms</b></h6>
+    <h6 class="card-title">Dealer/Yard: <b>{{ $vehicle->firstname }}</b></h6>
+    <i class="fas fa-phone fa-1x"></i>&nbsp;{{ $vehicle->phone }}
+    <i class="fas fa-map-marker-alt fa-1x"></i>&nbsp;{{ $vehicle->county }}
+    <a href="{{ route('details', $vehicle->id) }}" class="btn btn-primary">More Details</a>
   </div>
 </div>
-</div>
-<div class="col-6 col-md-4" style="padding-bottom: 15px;">
-<div class="card">
-  <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/184.webp" class="card-img-top" alt="Fissure in Sandstone"/>
-  <div class="card-body" style="color: #000;">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#!" class="btn btn-primary">Button</a>
   </div>
+  @endforeach
+    <!-- image card 1 line 1 end -->
+    @else
+  <div class="alert alert-success" role="alert">
+         Sorry. No Records Found. Try a Different Search.
+  </div>
+@endif
 </div>
-</div>
-
+<div class="pagination">
+{{ $vehicles->links() }}
 </div>
 </div>
 </div>
