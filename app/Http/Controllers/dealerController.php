@@ -3,6 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
+use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Hash;
+use App\Models\Caronsells;
+use App\Models\Payment;
+use Illuminate\Auth\Passwords\PasswordBroker;
 
 class dealerController extends Controller
 {
