@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Admin;
+use App\Models\Payment;
+use App\Models\Caronsells;
 
 class adminController extends Controller
 {
