@@ -725,7 +725,7 @@ style="width: 100%; background-color: rgba(0,0,0, 0.6); color: #fff; border-radi
     <input class="form-control" type="number" id="phone" tabindex="25" name="phone"  value="{{ $user->number }}"  placeholder="Enter phone number" required>
   </div>
 </div>
-<button type="submit" class="btn btn-primary btn-block mb-4">Submit &amp; pay for your listing</button>
+<button type="submit" class="btn btn-primary btn-block mb-4">Submit &amp; post your listing</button>
 </form>
 </div> 
 </div>
@@ -734,8 +734,8 @@ style="width: 100%; background-color: rgba(0,0,0, 0.6); color: #fff; border-radi
   <footer class="">
   <!-- Copyright -->
   <div class="text-center p-3" style="background-color: rgba(0,0,0, 0.5); border-radius: 10px;">
-  © 2022 Copyright:
-    <a class="text-center p-3" href="{{ route('logout')}}">Automart East Africa</a>
+  © 2023 Copyright:
+    <a class="text-center p-3" href="{{ route('logout')}}">Car Sell Site</a>
   </div>
   <!-- Copyright -->
 </footer>

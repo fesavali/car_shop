@@ -56,7 +56,7 @@
 <a href="{{ route('ddel_car', [$vehicle->id, $user->id]) }}" class="btn btn-danger">Delete Car</a>
 </br>
 </br>
-  <a href="{{ route('sold', [$vehicle->id, $user->id]) }}" class="btn btn-primary">Mark As Sold</a>
+
   </div>
 </div>  
       </th>

@@ -24,14 +24,13 @@ Welcome to Your Profile:  {{ $user->name }}
   <div class="row">
   <div class="col-md-4" style="padding-bottom:20px; color:#000;">
   <div class="card">
-  <img src="{{ url('public/images/bg/user.jpg') }}" class="card-img-top" alt="Fissure in Sandstone"/>
+  <img src="{{ url('/images/user.png') }}" class="card-img-top" alt="Fissure in Sandstone"/>
   <div class="card-body">
     <h5 class="card-title"><b>User Details</b></h5>
     <p class="card-text"><b>Dealer Name:</b> {{ $user->dName }}</p>
     <p class="card-text"><b>Email:</b> {{ $user->email }}</p>
     <p class="card-text"><b>Phone:</b> {{ $user->number }}</p>
     <p class="card-text"><b>Sec Phone:</b> {{ $user->number2 }}</p>
-    <a href="#!" class="btn btn-primary">Update</a>
   </div>
 </div>
   </div>
@@ -79,8 +78,8 @@ Welcome to Your Profile:  {{ $user->name }}
 <footer class="">
   <!-- Copyright -->
   <div class="text-center p-3" style="background-color: rgba(0,0,0, 0.5); border-radius: 10px;">
-  © 2022 Copyright:
-    <a class="text-center p-3" href="{{ route('logout')}}">Automart East Africa</a>
+  © 2023 Copyright:
+    <a class="text-center p-3" href="{{ route('logout')}}">Car Sell Site</a>
   </div>
   <!-- Copyright -->
 </footer>
