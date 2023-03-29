@@ -27,20 +27,6 @@
 
 
 <div class="col-md-8" style="padding-left : 20px; padding-right : 20px;">
-  <!-- show success message -->
-  @if (session('successMsg'))
-      <div class="alert alert-success" role="alert">
-          {{ session('successMsg') }}
-      </div>
-        @endif
-<!-- show error messages -->
-  @if ($errors->any())
-      @foreach($errors->all() as $error)
-        <div class="alert alert-danger" role="alert">
-          {{ $error }}
-        </div>
-         @endforeach
-  @endif
 <!--upload form here -->
 <form action="{{ route('savecar') }}" method="POST" enctype="multipart/form-data">
 {{ csrf_field() }}
@@ -736,7 +722,7 @@
     <input class="form-control" type="number" id="phone" tabindex="25" name="phone" placeholder="Phone number" required>
   </div>
 </div>
-<button type="submit" class="btn btn-primary btn-block mb-4">Submit &amp; pay for your listing</button>
+<button type="submit" class="btn btn-primary btn-block mb-4">Submit &amp; post your listing</button>
 </form>
 </div>
 

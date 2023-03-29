@@ -597,7 +597,7 @@ $place = $vehicle->county;
 @endphp
 <!-- Single item -->
 <div class="carousel-item active">
-<img src="{{ url('public/images/' . json_decode($vehicle->images, true)[0]) }}" class="d-block w-100" alt="Sunset Over the City"
+<img src="{{ url('/images/' . json_decode($vehicle->images, true)[0]) }}" class="d-block w-100" alt="Sunset Over the City"
 style="height:370px;"/>
 <div class="carousel-caption d-none d-md-block">
 <h5>Car Images </h5>
@@ -608,7 +608,7 @@ style="height:370px;"/>
 
 <!-- Single item -->
 <div class="carousel-item">
-<img src="{{ url('public/images/' . json_decode($vehicle->images, true)[1]) }}" class="d-block w-100" alt="Canyon at Nigh" 
+<img src="{{ url('/images/' . json_decode($vehicle->images, true)[1]) }}" class="d-block w-100" alt="Canyon at Nigh" 
 style="height:370px;"/>
 <div class="carousel-caption d-none d-md-block">
 <h5>Car Images </h5>
@@ -619,7 +619,7 @@ style="height:370px;"/>
 
 <!-- Single item -->
 <div class="carousel-item">
-<img src="{{ url('public/images/' . json_decode($vehicle->images, true)[2]) }}" class="d-block w-100" alt="Cliff Above a Stormy Sea"
+<img src="{{ url('/images/' . json_decode($vehicle->images, true)[2]) }}" class="d-block w-100" alt="Cliff Above a Stormy Sea"
 style="height:370px;"/>
 <div class="carousel-caption d-none d-md-block">
 <h5>Car Images </h5>
@@ -630,7 +630,7 @@ style="height:370px;"/>
 
 <!-- Single item -->
 <div class="carousel-item">
-<img src="{{ url('public/images/' . json_decode($vehicle->images, true)[3]) }}" class="d-block w-100" alt="Cliff Above a Stormy Sea"
+<img src="{{ url('/images/' . json_decode($vehicle->images, true)[3]) }}" class="d-block w-100" alt="Cliff Above a Stormy Sea"
 style="height:370px;"/>
 <div class="carousel-caption d-none d-md-block">
 <h5>Car Images </h5>
@@ -641,7 +641,7 @@ style="height:370px;"/>
 
 <!-- Single item -->
 <div class="carousel-item">
-<img src="{{ url('public/images/' . json_decode($vehicle->images, true)[4]) }}" class="d-block w-100" alt="Cliff Above a Stormy Sea"
+<img src="{{ url('/images/' . json_decode($vehicle->images, true)[4]) }}" class="d-block w-100" alt="Cliff Above a Stormy Sea"
 style="height:370px;"/>
 <div class="carousel-caption d-none d-md-block">
 <h5>Car Images </h5>
@@ -652,7 +652,7 @@ style="height:370px;"/>
 
 <!-- Single item -->
 <div class="carousel-item">
-<img src="{{ url('public/images/' . json_decode($vehicle->images, true)[5]) }}" class="d-block w-100" alt="Cliff Above a Stormy Sea"
+<img src="{{ url('/images/' . json_decode($vehicle->images, true)[5]) }}" class="d-block w-100" alt="Cliff Above a Stormy Sea"
 style="height:370px;"/>
 <div class="carousel-caption d-none d-md-block">
 <h5>Car Images </h5>

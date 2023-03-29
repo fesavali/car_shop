@@ -1,6 +1,20 @@
 @extends('layouts.main')
 @section('content')
 
+    <!-- show success message -->
+    @if (session('successMsg'))
+      <div class="alert alert-success" role="alert">
+          {{ session('successMsg') }}
+      </div>
+        @endif
+<!-- show error messages -->
+  @if ($errors->any())
+      @foreach($errors->all() as $error)
+        <div class="alert alert-danger" role="alert">
+          {{ $error }}
+        </div>
+         @endforeach
+  @endif
 
 <div class="row" style="padding-bottom:10px;" >
 <div class="col-12" style="background-color: rgba(0,0,0, 0.2); padding-top:30px;padding-bottom:10px; border-radius:8px;">
@@ -58,20 +72,6 @@
   <div class="col-6 col-sm-2" style="background-color: rgba(0,0,0, 0.2); padding-top:10px; padding-bottom:10px; border-radius: 8px;">
   <form action="{{ route('search') }}" method="POST">
   {{ csrf_field() }}
-    <!-- show success message -->
-    @if (session('successMsg'))
-      <div class="alert alert-success" role="alert">
-          {{ session('successMsg') }}
-      </div>
-        @endif
-<!-- show error messages -->
-  @if ($errors->any())
-      @foreach($errors->all() as $error)
-        <div class="alert alert-danger" role="alert">
-          {{ $error }}
-        </div>
-         @endforeach
-  @endif
 
 <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/3.5.2/select2.min.css" />
@@ -551,7 +551,7 @@ style="background-color : rgba(0, 101, 68, 0.9) !Important;"><i class="fa fa-sea
 <div class="col-6 col-md-4" style="padding-bottom: 15px;">
   <div class="card" style="color: #000">
   <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-    <img src="{{ url('public/images/' . json_decode($vehicle->images, true)[1]) }}" class="img-fluid" style="height:200px !Important; width:395px !Important;"/>
+    <img src="{{ url('/images/' . json_decode($vehicle->images, true)[1]) }}" class="img-fluid" style="height:200px !Important; width:395px !Important;"/>
     <a href="{{ route('details', $vehicle->id) }}">
       <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
     </a>
@@ -576,9 +576,10 @@ style="background-color : rgba(0, 101, 68, 0.9) !Important;"><i class="fa fa-sea
   </div>
 @endif
 </div>
-<div class="pagination">
+<div class="pagination" style="color:#fff;">
 {{ $vehicles->links() }}
 </div>
+
 </div>
 </div>
 </div>

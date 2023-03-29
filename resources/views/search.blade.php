@@ -553,7 +553,7 @@ style="background-color : rgba(0, 101, 68, 0.9) !Important;"><i class="fa fa-sea
   <div class="col-6 col-md-4" style="padding-bottom: 15px;">
   <div class="card" style="color: #000">
   <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-    <img src="{{ url('public/images/' . json_decode($vehicle->images, true)[0]) }}" class="img-fluid"/>
+    <img src="{{ url('/images/' . json_decode($vehicle->images, true)[0]) }}" class="img-fluid"/>
     <a href="{{ route('details', $vehicle->id) }}">
       <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
     </a>
