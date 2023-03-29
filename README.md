@@ -9,6 +9,7 @@ This is an ALX portfolio project, It is a simple e commerce site to buy and sell
 - Integrated with Mpesa API for payments.
 - Online payments intergrated.
 - In app authentication.
+- All crud operatioms for admins.
 
 
 ## License
