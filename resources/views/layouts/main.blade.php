@@ -11,7 +11,7 @@ sparepart sales and used motorbikes">
 <meta name="author" content="Automart East Africa">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Car | Sell</title>
+<title>Car | Shop</title>
 
 <meta name="msapplication-TileColor" content="#1F4255">
 
@@ -93,7 +93,7 @@ aria-label="Toggle navigation"
 <div class="collapse navbar-collapse" id="navbarSupportedContent">
 <!-- Navbar brand -->
 <a class="navbar-brand mt-2 mt-lg-0" href="{{ route('home')}}">
-<h3 style="font-family:Garamond; color:white;">CaR | SelL</h3>
+<h3 style="font-family:Garamond; color:white;">CaR | Shop</h3>
 </a>
 <!-- Left links -->
 <ul class="navbar-nav me-auto mb-2 mb-lg-0">

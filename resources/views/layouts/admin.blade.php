@@ -6,7 +6,7 @@
 <meta name="csrf-token" content="{{ csrf_token() }}">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Car | Sell</title>
+<title>Car | Shop</title>
 
 <meta name="msapplication-TileColor" content="#1F4255">
 
@@ -61,7 +61,7 @@ src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.2/mdb.min.js">
 
 <div class="row" style="color: #fff; padding-bottom: 15px;">
 <div class="col-md-8">  
-<img src="{{ url('public/images/logo.png') }}" alt="Automart EA Logo" height="60px">
+<img src="{{ url('images/logo.png') }}" alt="Automart EA Logo" height="60px">
 
 <h6>BEST DEALS IN THE WORLD</h6></div>
   <div class="col-md-4 d-flex justify-content-end" style="padding-top: 25px; padding-left: 20px; "><h5 style="font-family:Garamond;"><b><a href="https://wa.me/qr/CXYMBING6ENYD1" target="_blank"><i class="far fa-comment me-3"></i> WhatsApp</a> or <i class="far fa fa-phone me-3"></i>+254 792 567 464</b></h5></div>
@@ -89,7 +89,7 @@ src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.2/mdb.min.js">
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <!-- Navbar brand -->
       <a class="navbar-brand mt-2 mt-lg-0" href="{{ route('adash', $admin->id) }}">
-        <h3 style="font-family:Garamond; color:white;">CaRSelL | Admin</h3>
+        <h3 style="font-family:Garamond; color:white;">CaRShop | Admin</h3>
         </a>
       <!-- Left links -->
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -110,12 +110,6 @@ src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.2/mdb.min.js">
         </li>
         <li class="nav-item">
           <a class="nav-link" style="font-family:Garamond; color:white;" href="{{ route('messages', $admin->id) }}">Messeges</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" style="font-family:Garamond; color:white;" href="{{ route('admin_bids', $admin->id) }}">Bid Posts</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" style="font-family:Garamond; color:white;" href="{{ route('admin_bid_cost', $admin->id) }}">Bid Cost</a>
         </li>
       </ul>
       <!-- Left links -->
