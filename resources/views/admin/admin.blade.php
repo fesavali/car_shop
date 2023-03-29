@@ -66,12 +66,11 @@
   <div class="row">
   <div class="col-md-4" style="padding-bottom:20px; color:#000;">
   <div class="card">
-  <img src="{{ url('public/images/bg/user.jpg') }}" class="card-img-top" alt="Fissure in Sandstone"/>
+  <img src="{{ url('/images/user.png') }}" class="card-img-top" alt="Fissure in Sandstone"/>
   <div class="card-body">
     <h5 class="card-title"><b>User Details</b></h5>
     <p class="card-text"><b>Admin Name:</b> {{ $admin->uName }}</p>
     <p class="card-text"><b>Email:</b> {{ $admin->email }}</p>
-    <a href="#!" class="btn btn-primary">Update</a>
   </div>
 </div>
   </div>
@@ -81,14 +80,14 @@
 <div class="row">
     <div class="col-md">
     <div class="card">
-  <div class="card-body">Dealers</div>
-  <div class="card-body"><b><h4>0</h4></b></div>
+  <div class="card-body">Total Users:</div>
+  <div class="card-body"><b><h4>{{ $users }}</h4></b></div>
 </div>
     </div>
     <div class="col-md">
     <div class="card">
-  <div class="card-body">Users</div>
-  <div class="card-body"><b><h4>0</h4></b></div>
+  <div class="card-body">Revenue Today:</div>
+  <div class="card-body"><b><h4>Ksh. 0</h4></b></div>
 </div>
     </div>
     <div class="col-md">
@@ -104,14 +103,14 @@
   <div class="row">
     <div class="col-md">
     <div class="card">
-  <div class="card-body">Number of Cars</div>
-  <div class="card-body"><b><h4>0</h4></b></div>
+  <div class="card-body">Listed Cars:</div>
+  <div class="card-body"><b><h4>{{ $count }}</h4></b></div>
 </div>
     </div>
     <div class="col-md">
     <div class="card">
-  <div class="card-body">Revenue Today</div>
-  <div class="card-body"><b><h4>Ksh. 0</h4></b></div>
+  <div class="card-body">Sold Cars: </div>
+  <div class="card-body"><b><h4>{{ $sold }}</h4></b></div>
 </div>
     </div>
     <div class="col-md">
@@ -130,8 +129,8 @@
 <footer class="">
   <!-- Copyright -->
   <div class="text-center p-3" style="background-color: rgba(0,0,0, 0.5); border-radius: 10px;">
-  © 2022 Copyright:
-    <a class="text-center p-3" href="{{ route('logout')}}">Automart East Africa</a>
+  © 2023 Copyright:
+    <a class="text-center p-3" href="{{ route('logout')}}">Car Sell Site</a>
   </div>
   <!-- Copyright -->
 </footer>

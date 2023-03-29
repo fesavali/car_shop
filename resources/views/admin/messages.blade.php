@@ -65,8 +65,8 @@
 <footer class="">
   <!-- Copyright -->
   <div class="text-center p-3" style="background-color: rgba(0,0,0, 0.5); border-radius: 10px;">
-  © 2022 Copyright:
-    <a class="text-center p-3" href="{{ route('logout')}}">Automart East Africa</a>
+  © 2023 Copyright:
+<a class="text-center p-3" href="{{ route('logout')}}">Car Sell Site</a>
   </div>
   <!-- Copyright -->
 </footer>

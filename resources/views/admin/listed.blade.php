@@ -24,7 +24,7 @@
       <div class="row">
   <div class="col-3">
   <div class="card" style="width: 18rem; ">
-      <img src="{{ url('public/images/' . json_decode($vehicle->images, true)[1]) }}" class="card-img" alt="Car Image" style="height: 13rem;"/>
+      <img src="{{ url('/images/' . json_decode($vehicle->images, true)[1]) }}" class="card-img" alt="Car Image" style="height: 13rem;"/>
       </div>
   </div>
   <div class="col-7"style="background-color: rgba(255,255,255, 0.8); border-radius:8px; color: #000;">
@@ -74,8 +74,8 @@
 <footer class="">
 <!-- Copyright -->
 <div class="text-center p-3" style="background-color: rgba(0,0,0, 0.5); border-radius: 10px;">
-© 2022 Copyright:
-    <a class="text-center p-3" href="{{ route('logout')}}">Automart East Africa</a>
+© 2023 Copyright:
+<a class="text-center p-3" href="{{ route('logout')}}">Car Sell Site</a>
 </div>
 <!-- Copyright -->
 </footer>
