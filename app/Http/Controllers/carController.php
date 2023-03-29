@@ -9,11 +9,11 @@ use App\Models\Caronsells;
 class carController extends Controller
 {
     public function index(){  
-        $vehicles = Caronsells::orderBy('created_at', 'desc')->paginate(9);
+        $vehicles = Caronsells::where('sold', )->orderBy('created_at', 'desc')->paginate(9);
         return view('all', compact('vehicles'));   
     }
     public function indexs(){
-        $vehicles = Caronsells::orderBy('created_at', 'desc')->paginate(6);
+        $vehicles = Caronsells::where('sold', )->orderBy('created_at', 'desc')->paginate(6);
         return view('welcome', compact('vehicles'));
     }
 
@@ -38,6 +38,7 @@ class carController extends Controller
 
         $vehicles = Caronsells::where('make', $request->make)
         ->where('model', $request->model)
+        ->where('sold', )
         ->paginate(9);
 
       

@@ -2,7 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB; 
+use Illuminate\Support\Facades\Hash;
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request; 
+use Mail;
+use Carbon\Carbon; 
+use App\Models\Admin; 
+use Illuminate\Support\Str;
 
 class AdminReset extends Controller
 {

@@ -14,7 +14,7 @@ class Controller extends BaseController
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
     public function index(){
-            $vehicles = Caronsells::orderBy('created_at', 'desc')->paginate(6);
+            $vehicles = Caronsells::where('sold', )->orderBy('created_at', 'desc')->paginate(6);
             return view('welcome', compact('vehicles'));
     }
 

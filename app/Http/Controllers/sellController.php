@@ -82,7 +82,7 @@ class sellController extends Controller
         $carOnSell->carId = $carID;
         $carOnSell->save();
         $message= 'Vehicle uploaded successfully';
-        return redirect(route('payment', $request->phone, $carID))->with(['successMsg' => $message]);
+        return redirect(route('home'))->with(['successMsg' => $message]);
     }
     
     // get mpesa access token

@@ -36,6 +36,7 @@ class dealerController extends Controller
     public function listed($id){
         $user = User::where('id', $id)->first();
         $vehicles = Caronsells::where('email', $user->email)
+                                ->where('sold')
                                 ->orderBy('created_at', 'desc')
                                 ->paginate(3);
         return view('dealer.listed')->with(['user' => $user, 'vehicles' => $vehicles]); 
@@ -64,6 +65,15 @@ class dealerController extends Controller
         return redirect(route('dlisted', $adm))->with(['errorMsg'=> $message]);
     } 
 
+    }
+
+    public function sells($id){
+        $user = User::where('id', $id)->first();
+        $vehicles = Caronsells::where('email', $user->email)
+                                ->where('sold', 'yes')
+                                ->orderBy('created_at', 'desc')
+                                ->paginate(3);
+        return view('dealer.sells')->with(['user' => $user, 'vehicles' => $vehicles]); 
     }
 
     public function car($id, $adm, Request $request){
