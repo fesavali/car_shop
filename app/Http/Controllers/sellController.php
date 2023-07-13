@@ -30,7 +30,7 @@ class sellController extends Controller
             'transmission' => 'required',
             'vehicle_type' => 'required',
             'description' => 'required',
-            'images' => 'required|max:10|min:6',
+            'images' => 'required|max:10|min:5',
             'images.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'firstname' => 'required',
             'lastname' => 'required',
